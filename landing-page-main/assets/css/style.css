@@ -100,16 +100,23 @@
   transition-delay: 0s;
   z-index: 2;
 }
+.mybtn1:focus,
+.mybtn1:active,
 .mybtn1:hover {
   color: #fff;
 }
-.mybtn1:hover::after {
+.mybtn1:hover::after,
+.mybtn1:focus::after,
+.mybtn1:active::after {
   transform: translateX(-41%) translateY(-25%) rotate(45deg);
   transition-duration: 0.3s;
   transition-timing-function: linear;
   transition-delay: 0s;
 }
-.mybtn1:hover::before {
+
+.mybtn1:hover::before,
+.mybtn1:focus::before,
+.mybtn1:active::before {
   transform: translateX(-50%) translateY(-25%) rotate(45deg);
   transition-duration: 0.3s;
   transition-timing-function: linear;
@@ -1099,8 +1106,9 @@ select:focus {
 ------------------------------*/
 .hero-area {
   position: relative;
-  padding: 365px 0px 291px;
+  padding: 170px 0px 291px;
   background: url(../images/heroarea.jpg);
+  /* background: linear-gradient(to bottom left, rgb(150, 129, 129),rgb(29, 0, 133)); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1161,7 +1169,7 @@ select:focus {
 }
 .hero-area .right-img .img {
   position: absolute;
-  top: -95px;
+  /* top: -95px; */
   left: 100px;
   max-width: 380px;
   width: auto;
