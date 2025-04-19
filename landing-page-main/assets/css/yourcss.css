@@ -13,10 +13,12 @@
     height: 200px;
     object-fit: cover;
     opacity: 0;
+    /* box-shadow: 5px 5px 10px black;; */
   }
 
   /* +++++++++++++++++++++ hero text */
   .hero-text{
     line-height: 0.9!important;
+    text-shadow: 5px 5px 10px black;
   }
 

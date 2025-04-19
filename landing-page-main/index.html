@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shared on THEMELOCK.COM - Prolab - Product Landing Page </title>
+  <title>Vrindavan</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
   <!-- bootstrap -->
@@ -138,9 +138,9 @@
               </p>
               <div class="links">
                 <a href="javascript:void(0)" class="mybtn1" id="hero-bag-btn"><span>Bags</span> </a>
-                <a href="javascript:void(0)" class="mybtn1"><span>T-shirt</span> </a>
-                <a href="javascript:void(0)" class="mybtn1"><span>Web Design</span> </a>
-                <a href="javascript:void(0)" class="mybtn1"><span>Digital Marketing</span> </a>
+                <a href="javascript:void(0)" class="mybtn1" id="hero-shirt-btn"><span>T-shirt</span> </a>
+                <a href="javascript:void(0)" class="mybtn1" id="hero-wbdesign-btn"><span>Web Design</span> </a>
+                <a href="javascript:void(0)" class="mybtn1" id="hero-dgmarketing-btn"><span>Digital Marketing</span> </a>
               </div>
             </div>
           </div>
@@ -149,10 +149,10 @@
           <div class="right-img">
             <!-- <img class="img-fluid img" src="assets/images/w4.png" alt=""> -->
             <div class="img-fluid img hero-image-product-1-container" id="hero-image-product-1-container">
-              <img src="assets/images/products/bag1.png" class="hero-bag-image" id="bag1">
-              <img src="assets/images/products/bag2.png" class="hero-bag-image" id="bag2">
-              <img src="assets/images/products/bag3.png" class="hero-bag-image" id="bag3">
-              <img src="assets/images/products/bag4.png" class="hero-bag-image" id="bag4">
+              <img src="assets/images/products/bag1.png" class="hero-bag-image" id="hero-img-1">
+              <img src="assets/images/products/bag2.png" class="hero-bag-image" id="hero-img-2">
+              <img src="assets/images/products/bag3.png" class="hero-bag-image" id="hero-img-3">
+              <img src="assets/images/products/bag4.png" class="hero-bag-image" id="hero-img-4">
             </div>
           </div>
         </div>
@@ -254,8 +254,8 @@
             </div>
             <div class="right">
               <div class="content">
-                <p>+333 123 4565 7898</p>
-                <p>+333 153 4575 7893</p>
+                <p>+63 912345678</p>
+                <p>+11 22 3333 4444</p>
               </div>
             </div>
           </div>
@@ -269,8 +269,8 @@
             </div>
             <div class="right">
               <div class="content">
-                <p>demoname@name.com</p>
-                <p>anothername@name.com</p>
+                <p>vrindavan@gmail.com</p>
+                <p>vrindavan_support@gmail.com</p>
               </div>
             </div>
           </div>
@@ -284,7 +284,7 @@
             </div>
             <div class="right">
               <div class="content">
-                <p>140 Berkley Street, Philadelphia, Pennsylvania</p>
+                <p>Block 24, Lot 24, North Ville, Punturin, Valenzuela, 1440 Metro Manila</p>
               </div>
             </div>
           </div>
@@ -315,9 +315,11 @@
         <div class="col-lg-6">
           <div class="google_map_wrapper">
 
-            <iframe
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.4804503369282!2d120.9884607288711!3d14.74194076416957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b134ecad452d%3A0xdf31e9f8346545af!2sNorth%20Ville%201B!5e0!3m2!1sen!2sph!4v1745036211175!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <!-- <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.3362149737545!2d90.3866213154314!3d23.73538709526567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8c6d25f0a91%3A0xf8da21d64c3856dc!2sNew%20Work%20Aquarium%20Center!5e0!3m2!1sen!2sus!4v1593765590933!5m2!1sen!2sus"
-              frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+              frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
           </div>
         </div>
       </div>
@@ -422,43 +424,89 @@
   <script>
     $(function () {
 
-      $('#hero-bag-btn').on('click', function () {
+
+      function change_hero_img() {
         // Set initial off-screen positions
-        gsap.set("#bag1", { x: -400, y: 0, opacity: 1 });
-        gsap.set("#bag2", { x: 400, y: 0, opacity: 1 });
-        gsap.set("#bag3", { x: 0, y: -400, opacity: 1 });
-        gsap.set("#bag4", { x: 0, y: 400, opacity: 1 });
+        gsap.set("#hero-img-1", { x: -400, y: 0, opacity: 1 });
+        gsap.set("#hero-img-2", { x: 400, y: 0, opacity: 1 });
+        gsap.set("#hero-img-3", { x: 0, y: -400, opacity: 1 });
+        gsap.set("#hero-img-4", { x: 0, y: 400, opacity: 1 });
 
         // Animate into slightly different overlapping positions
-        gsap.to("#bag1", {
+        gsap.to("#hero-img-1", {
           x: -170,
           y: 10,
           scale: 1,
           duration: 1.2,
           ease: "power2.out"
         });
-        gsap.to("#bag2", {
+        gsap.to("#hero-img-2", {
           x: -100,
           y: 195,
           scale: 1,
           duration: 1.2,
           ease: "power2.out"
         });
-        gsap.to("#bag3", {
+        gsap.to("#hero-img-3", {
           x: 0,
           y: 20,
           scale: 1,
           duration: 1.2,
           ease: "power2.out"
         });
-        gsap.to("#bag4", {
+        gsap.to("#hero-img-4", {
           x: -90,
           y: 80,
           scale: 1,
           duration: 1.2,
           ease: "power2.out"
         });
+      }
+
+      $('#hero-bag-btn').on('click', function () {
+
+        $("#hero-img-1").attr('src', 'assets/images/products/bag1.png');
+        $("#hero-img-2").attr('src', 'assets/images/products/bag2.png');
+        $("#hero-img-3").attr('src', 'assets/images/products/bag3.png');
+        $("#hero-img-4").attr('src', 'assets/images/products/bag4.png');
+
+
+        change_hero_img();
+
       });
+
+      $("#hero-shirt-btn").click(function () {
+
+        $("#hero-img-1").attr('src', 'assets/images/products/shirt1.png');
+        $("#hero-img-2").attr('src', 'assets/images/products/shirt2.png');
+        $("#hero-img-3").attr('src', 'assets/images/products/shirt3.png');
+        $("#hero-img-4").attr('src', 'assets/images/products/shirt4.png');
+
+        change_hero_img();
+
+      })
+
+      $("#hero-wbdesign-btn").click(function () {
+
+        $("#hero-img-1").attr('src', 'assets/images/products/web-design-1.png');
+        $("#hero-img-2").attr('src', 'assets/images/products/web-design-2.jpg');
+        $("#hero-img-3").attr('src', 'assets/images/products/web-design-3.jpeg');
+        $("#hero-img-4").attr('src', 'assets/images/products/web-design-4.jpeg');
+
+        change_hero_img();
+
+      })
+
+      $("#hero-dgmarketing-btn").click(function () {
+
+        $("#hero-img-1").attr('src', 'assets/images/products/dgmarketing-1.png');
+        $("#hero-img-2").attr('src', 'assets/images/products/dgmarketing-2.png');
+        $("#hero-img-3").attr('src', 'assets/images/products/dgmarketing-3.png');
+        $("#hero-img-4").attr('src', 'assets/images/products/dgmarketing-4.png');
+
+        change_hero_img();
+
+      })
 
     })
   </script>
