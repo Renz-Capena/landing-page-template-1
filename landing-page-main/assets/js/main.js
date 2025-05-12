@@ -41,9 +41,9 @@ $(function ($) {
                 bootomclass.fadeOut('slow');
             }
             if ($(".navigation").offset().top > 0) {
-                $(".navigation").addClass("stiky-nav");
+                // $(".navigation").addClass("stiky-nav");
             } else {
-                $(".navigation").removeClass("stiky-nav");
+                // $(".navigation").removeClass("stiky-nav");
             }
         });
 
