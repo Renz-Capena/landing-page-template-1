@@ -166,9 +166,9 @@
           <div class="right-img">
             <!-- <img class="img-fluid img" src="assets/images/w4.png" alt=""> -->
             <div class="img-fluid img hero-image-product-1-container" id="hero-image-product-1-container">
-              <img src="assets/images/products/bag1.png" class="hero-bag-image" id="hero-img-1" style="height: 230px !important;">
+              <img src="assets/images/products/bag1.png" class="hero-bag-image" id="hero-img-1" style="height: 230px;">
               <img src="assets/images/products/bag2.png" class="hero-bag-image" id="hero-img-2">
-              <img src="assets/images/products/bag3.png" class="hero-bag-image" id="hero-img-3" style="height: 300px !important;">
+              <img src="assets/images/products/bag3.png" class="hero-bag-image" id="hero-img-3" style="height: 300px;">
               <img src="assets/images/products/bag4.png" class="hero-bag-image" id="hero-img-4">
             </div>
           </div>
@@ -616,42 +616,90 @@
       // run initial load for images in hero
       change_hero_img();
 
-      function change_hero_img() {
+      function change_hero_img(selected) {
         // Set initial off-screen positions
-        gsap.set("#hero-img-1", { x: -400, y: 0, opacity: 1 });
-        gsap.set("#hero-img-2", { x: 400, y: 0, opacity: 1 });
-        gsap.set("#hero-img-3", { x: 0, y: -400, opacity: 1 });
-        gsap.set("#hero-img-4", { x: 0, y: 400, opacity: 1 });
+        gsap.set("#hero-img-1", { x: -400, y: 0, opacity: 0 });
+        gsap.set("#hero-img-2", { x: 400, y: 0, opacity: 0 });
+        gsap.set("#hero-img-3", { x: 0, y: -400, opacity: 0 });
+        gsap.set("#hero-img-4", { x: 0, y: 400, opacity: 0 });
 
         // Animate into slightly different overlapping positions
-        gsap.to("#hero-img-1", {
-          x: -170,
-          y: 10,
-          scale: 1,
-          duration: 1.2,
-          ease: "power2.out"
-        });
-        gsap.to("#hero-img-2", {
-          x: -100,
-          y: 195,
-          scale: 1,
-          duration: 1.2,
-          ease: "power2.out"
-        });
-        gsap.to("#hero-img-3", {
-          x: 0,
-          y: 0,
-          scale: 1,
-          duration: 1.2,
-          ease: "power2.out"
-        });
-        gsap.to("#hero-img-4", {
-          x: -90,
-          y: 80,
-          scale: 1,
-          duration: 1.2,
-          ease: "power2.out"
-        });
+        switch (selected) {
+          case 'shirt':
+            gsap.to("#hero-img-1", {
+              x: -170,
+              y: 20,
+              scale: 1,
+              opacity: 1,
+              duration: 2,
+              ease: "power2.out"
+            });
+            gsap.to("#hero-img-3", {
+              x: 0,
+              y: 20,
+              scale: 1,
+              opacity: 1,
+              duration: 2,
+              ease: "power2.out"
+            });
+            gsap.to("#hero-img-4", {
+              x: -80,
+              y: 160,
+              scale: 1,
+              opacity: 1,
+              duration: 2,
+              ease: "power2.out"
+            });
+            break;
+          case 'dg_marketing':
+            
+            let x_value = $(window).width() <= 768 ? -140 : -175;
+
+            gsap.to("#hero-img-1", {
+              x: x_value,
+              y: 0,
+              scale: 1,
+              opacity: 1,
+              duration: 2,
+              ease: "power2.out"
+            });
+            break;
+          default:
+            gsap.to("#hero-img-1", {
+              x: -170,
+              y: 10,
+              scale: 1,
+              opacity: 1,
+              duration: 2,
+              ease: "power2.out"
+            });
+            gsap.to("#hero-img-2", {
+              x: -100,
+              y: 195,
+              scale: 1,
+              opacity: 1,
+              duration: 2,
+              ease: "power2.out"
+            });
+            gsap.to("#hero-img-3", {
+              x: 0,
+              y: 0,
+              scale: 1,
+              opacity: 1,
+              duration: 2,
+              ease: "power2.out"
+            });
+            gsap.to("#hero-img-4", {
+              x: -90,
+              y: 80,
+              scale: 1,
+              opacity: 1,
+              duration: 2,
+              ease: "power2.out"
+            });
+            break
+        }
+
       }
 
       $('#hero-bag-btn').on('click', function () {
@@ -661,8 +709,29 @@
         $("#hero-img-3").attr('src', 'assets/images/products/bag3.png');
         $("#hero-img-4").attr('src', 'assets/images/products/bag4.png');
 
+        // change css
+        $("#hero-img-1").css({
+          height: '230px',
+          width: '200px',
+          display: 'unset',
+        })
 
-        change_hero_img();
+        $("#hero-img-2").css({
+          display: 'unset',
+        })
+
+        $("#hero-img-3").css({
+          display: 'unset',
+          height: '300px',
+        })
+
+        $("#hero-img-4").css({
+          display: 'unset'
+        })
+
+
+
+        change_hero_img('bag');
 
       });
 
@@ -673,7 +742,28 @@
         $("#hero-img-3").attr('src', 'assets/images/products/shirt3.png');
         $("#hero-img-4").attr('src', 'assets/images/products/shirt4.png');
 
-        change_hero_img();
+        // change css
+        $("#hero-img-1").css({
+          height: '200px',
+          width: '200px',
+          display: 'unset',
+        })
+
+        $("#hero-img-2").css({
+          display: 'none',
+        })
+
+        $("#hero-img-3").css({
+          display: 'unset',
+          height: '200px',
+        })
+
+        $("#hero-img-4").css({
+          display: 'unset'
+        })
+
+
+        change_hero_img('shirt');
 
       })
 
@@ -684,7 +774,28 @@
         $("#hero-img-3").attr('src', 'assets/images/products/web-design-3.jpeg');
         $("#hero-img-4").attr('src', 'assets/images/products/web-design-4.jpeg');
 
-        change_hero_img();
+        // change css
+        $("#hero-img-1").css({
+          height: '200px',
+          width: '200px',
+          display: 'unset',
+        })
+
+        $("#hero-img-2").css({
+          display: 'unset',
+        })
+
+        $("#hero-img-3").css({
+          display: 'unset',
+          height: '200px',
+        })
+
+        $("#hero-img-4").css({
+          display: 'unset'
+        })
+
+
+        change_hero_img('web_design');
 
       })
 
@@ -695,7 +806,24 @@
         $("#hero-img-3").attr('src', 'assets/images/products/dgmarketing-3.png');
         $("#hero-img-4").attr('src', 'assets/images/products/dgmarketing-4.png');
 
-        change_hero_img();
+        // change css
+        $("#hero-img-1").css({
+          height: '350px',
+          width: '350px'
+        })
+
+        $("#hero-img-2").css({
+          display: 'none'
+        })
+        $("#hero-img-3").css({
+          display: 'none'
+        })
+        $("#hero-img-4").css({
+          display: 'none'
+        })
+
+
+        change_hero_img('dg_marketing');
 
       })
 
