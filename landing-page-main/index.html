@@ -29,6 +29,8 @@
   <link rel="stylesheet" href="assets/css/responsive.css">
   <!-- your css -->
   <link rel="stylesheet" href="assets/css/yourcss.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -178,6 +180,47 @@
     </div>
   </div>
   <!-- Hero Area End -->
+
+    <!-- Testimonial Area Start -->
+  <section class="testimonial-area" id="testimonial-area">
+    <div class="curve curve-bottom"></div>
+    <div class="curve curve-top"></div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <h3 class="title">Product Preview</h3>
+          <p>Get a closer look at our product’s quality, design, and features. This sample shows exactly what you can expect.</p>
+        </div>
+        <div class="col-12">
+          <div class="carousel-container">
+            <!-- Prev Button -->
+            <button class="nav-button prev-button"><</button>
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="assets/images/carousel/1.png" /></div>
+                <div class="swiper-slide"><img src="assets/images/carousel/2.png" /></div>
+                <div class="swiper-slide"><img src="assets/images/carousel/3.png" /></div>
+                <div class="swiper-slide"><img src="assets/images/carousel/4.png" /></div>
+                <div class="swiper-slide"><img src="assets/images/carousel/5.png" /></div>
+                <div class="swiper-slide"><img src="assets/images/carousel/6.png" /></div>
+                <div class="swiper-slide"><img src="assets/images/carousel/7.png" /></div>
+                <div class="swiper-slide"><img src="assets/images/carousel/8.png" /></div>
+                <div class="swiper-slide"><img src="assets/images/carousel/9.png" /></div>
+                <div class="swiper-slide"><img src="assets/images/carousel/10.png" /></div>
+
+              </div>
+            </div>
+
+            <!-- Next Button -->
+            <button class="nav-button next-button">></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonial Area End -->
 
   <!-- Testimonial Area Start -->
   <section class="testimonial-area" id="testimonial-area">
@@ -524,9 +567,9 @@
               </a>
             </div>
             <div class="text">
-              <p>Conveying or northward offending admitting perfectly my. Colonel gravity get thought fat smiling add
+              <!-- <p>Conveying or northward offending admitting perfectly my. Colonel gravity get thought fat smiling add
                 but.
-              </p>
+              </p> -->
             </div>
           </div>
           <div class="fotter-social-links">
@@ -562,8 +605,7 @@
       </div>
     </div>
     <div class="copy-bg text-center">
-      <p>Copyright © 2020. All rights reserved by
-        <a href="index.html">GeniusDevs</a>
+      <p>Copyright © 2025. All rights reserved
       </p>
     </div>
   </footer>
@@ -604,6 +646,8 @@
   <script src="assets/js/main.js"></script>
   <!-- GSAP for animation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script>
     $(function () {
@@ -822,6 +866,34 @@
 
       })
 
+       const swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 3.5,
+        loop: true,
+        spaceBetween: 10,
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2,
+          slideShadows: false,
+        },
+        navigation: {
+          nextEl: ".next-button",
+          prevEl: ".prev-button",
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1, // 👈 Show 1 slide on small screens
+          },
+          768: {
+            slidesPerView: 3.5, // 👈 Default for tablets/desktops
+          },
+        }
+      });
+      
     })
   </script>
 </body>
